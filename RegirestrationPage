@@ -1,0 +1,126 @@
+package com.example.house_maid_app;
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+
+public class RegistrationPage extends AppCompatActivity {
+    private Button btnSignUp;
+    private Button btnSignIn;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_registration_page);
+        btnSignUp=(Button) findViewById(R.id.btnSignUp);
+        btnSignIn=(Button) findViewById(R.id.btnSignIn);
+//register new user=signup button
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSignupage();
+            }
+        });
+        //login user
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLogIn();
+            }
+        });
+    }
+    //signup finction
+    public void openSignupage(){
+        Intent intent1=new Intent(this, RegisterNewUserPage.class);
+        startActivity(intent1);
+    }
+    //signin function
+    public void openLogIn(){
+        Intent intent2=new Intent(this, loginUser.class);
+        startActivity(intent2);
+    }
+
+}
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/loginbkg"
+    tools:context=".RegistrationPage">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        android:background="@drawable/custom_edittext">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="24dp">
+
+
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Hi There!! Are you looking for a great house Maid??"
+                android:textAlignment="center"
+                android:textColor="@color/purple"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+
+
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/purple"
+                android:onClick="register_new_user_page"
+                android:text="Sign Up"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/purple"
+                android:onClick="login_page"
+                android:text="Login"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="House Maids Application"
+        android:textAlignment="center"
+        android:layout_marginTop="100dp"
+        android:textStyle="bold|italic" />
+</LinearLayout>
+
+
