@@ -1,0 +1,492 @@
+package com.example.house_maid_app;
+
+import android.os.Bundle;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+
+public class ListA extends AppCompatActivity {
+    // private TextView textView23, textView29, textView10, textView9, textView8, textView7, textView6, textView5;//defining all required textview
+    private Button btn_add1;//define 1st btn
+    private Button btn_add2; //define 2ed btn
+    private Button btn_add3;//define third btn
+    private Button btn_add4;//define forth btn
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_list);
+
+
+
+     /**   textView23= (TextView) findViewById(R.id.textView23);
+        textView29= (TextView) findViewById(R.id.textView29);
+        textView10= (TextView) findViewById(R.id.textView10);
+        textView9= (TextView) findViewById(R.id.textView9);
+        textView8= (TextView) findViewById(R.id.textView8);
+        textView7= (TextView) findViewById(R.id.textView7);
+        textView6= (TextView) findViewById(R.id.textView6);
+        textView5= (TextView) findViewById(R.id.textView5);**/
+
+
+        btn_add1=(Button) findViewById(R.id.btn_add1);
+        btn_add2=(Button) findViewById(R.id.btn_add2);
+        btn_add3=(Button) findViewById(R.id.btn_add3);
+        btn_add4=(Button) findViewById(R.id.btn_add4);
+
+        //set the functions for each buttons
+        btn_add1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moreInf();
+            }
+        });
+        btn_add2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moreInf2();
+            }
+        });
+        btn_add3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moreInf3();
+            }
+        });
+        btn_add4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moreInf4();
+            }
+        });
+    }
+
+
+
+    //function for MARILYN
+    public void moreInf(){
+        Intent intent1=new Intent(this, MarilynInf.class);
+        startActivity(intent1);
+
+    }
+    //function for WILMA
+    public void moreInf2(){
+        Intent intent2=new Intent(this, WilmaInf.class);
+        startActivity(intent2);
+
+    }
+    //function for MARISSA
+    public void moreInf3(){
+        Intent intent3=new Intent(this, MarissaInfo.class);
+        startActivity(intent3);
+
+    }
+    //function for DORYLENE
+    public void moreInf4(){
+        Intent intent4=new Intent(this, DoryleneInf.class);
+        startActivity(intent4);
+
+    }
+
+}
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bfccff"
+    tools:context=".ListA">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_1"
+        android:layout_width="180dp"
+        android:layout_height="290dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="147dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/wilma" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="208dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="155dp"
+            android:text="WILMA MARCELLANA "
+            android:textAlignment="viewStart"
+            android:textColor="#040303"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="180dp"
+            android:text="None Experience"
+            android:textColor="#000000"
+            android:textSize="10sp" />
+        <TextView
+            android:id="@+id/textView_001"
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:paddingLeft="105dp"
+            android:paddingTop="180dp"
+            android:text="Age:- 26"
+            android:textColor="#000000"
+            android:textSize="10sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar2"
+            style="@android:style/Widget.Material.RatingBar.Small"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numStars="3"
+            android:paddingLeft="12dp"
+            android:paddingTop="185dp"
+            android:progress="@integer/material_motion_duration_short_1"
+            android:progressBackgroundTint="?attr/colorButtonNormal"
+            android:progressTint="#FFEB3B"
+            android:stepSize="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:orientation="horizontal"
+            android:paddingLeft="90dp"
+            android:paddingTop="200dp">
+
+            <Button
+                android:id="@+id/btn_add1"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:text="More Inf"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView13"
+        android:layout_width="180dp"
+        android:layout_height="260dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.912"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="164dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/dorylene" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="170dp"
+            android:text="DORYLENE DOLORES YESA"
+            android:textAlignment="viewStart"
+            android:textColor="#040303"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="190dp"
+            android:text="None Experience"
+            android:textColor="#000000"
+            android:textSize="10sp" />
+        <TextView
+            android:id="@+id/textView_002"
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:paddingLeft="105dp"
+            android:paddingTop="190dp"
+            android:text="Age:- 41"
+            android:textColor="#000000"
+            android:textSize="10sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar5"
+            style="@android:style/Widget.Material.RatingBar.Small"
+            android:layout_width="match_parent"
+            android:layout_height="243dp"
+            android:numStars="3"
+            android:paddingLeft="12dp"
+            android:paddingTop="167dp"
+            android:progress="@integer/material_motion_duration_short_1"
+            android:progressBackgroundTint="?attr/colorButtonNormal"
+            android:progressTint="#FFEB3B"
+            android:stepSize="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="horizontal"
+            android:paddingLeft="90dp"
+            android:paddingTop="205dp">
+
+            <Button
+                android:id="@+id/btn_add2"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:text="More Inf"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView14"
+        android:layout_width="180dp"
+        android:layout_height="290dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.209"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/marily" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="150dp"
+            android:text="MARILYN COMPRA AYO"
+            android:textAlignment="viewStart"
+            android:textColor="#040303"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="180dp"
+            android:text="None Experience"
+            android:textColor="#000000"
+            android:textSize="10sp" />
+        <TextView
+            android:id="@+id/textView_003"
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:paddingLeft="105dp"
+            android:paddingTop="180dp"
+            android:text="Age:- 42"
+            android:textColor="#000000"
+            android:textSize="10sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar4"
+            style="@android:style/Widget.Material.RatingBar.Small"
+            android:layout_width="match_parent"
+            android:layout_height="238dp"
+            android:numStars="3"
+            android:paddingLeft="12dp"
+            android:paddingTop="100dp"
+            android:progress="@integer/material_motion_duration_short_1"
+            android:progressBackgroundTint="?attr/colorButtonNormal"
+            android:progressTint="#FFEB3B"
+            android:stepSize="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="275dp"
+            android:orientation="horizontal"
+            android:paddingLeft="90dp"
+            android:paddingTop="200dp">
+
+            <Button
+                android:id="@+id/btn_add3"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:text="More Inf"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView11"
+        android:layout_width="180dp"
+        android:layout_height="270dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.915"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/marissa" />
+
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="170dp"
+            android:text="MARISSA PENTINIO MARCO"
+            android:textAlignment="viewStart"
+            android:textColor="#040303"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="215dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="190dp"
+            android:text="None Experience"
+            android:textColor="#000000"
+            android:textSize="10sp" />
+        <TextView
+            android:id="@+id/textView_004"
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:paddingLeft="105dp"
+            android:paddingTop="190dp"
+            android:text="Age:- 39"
+            android:textColor="#000000"
+            android:textSize="10sp" />
+
+
+        <RatingBar
+            android:id="@+id/ratingBar3"
+            style="@android:style/Widget.Material.RatingBar.Small"
+            android:layout_width="185dp"
+            android:layout_height="260dp"
+            android:numStars="3"
+            android:paddingLeft="12dp"
+            android:paddingTop="168dp"
+            android:progress="@integer/material_motion_duration_short_1"
+            android:progressBackgroundTint="?attr/colorButtonNormal"
+            android:progressTint="#FFEB3B"
+            android:stepSize="1" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:orientation="horizontal"
+            android:paddingLeft="90dp"
+            android:paddingTop="205dp">
+
+            <Button
+                android:id="@+id/btn_add4"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="90dp"
+                android:layout_height="58dp"
+                android:text="More Inf"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ALL AVAILABLE HOUSE MAIDS IN MUSCAT"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.591"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.076"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="House Maids Application"
+        android:textAlignment="center"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.99"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
