@@ -1,0 +1,129 @@
+package com.example.house_maid_app;
+
+import android.os.Bundle;
+
+import androidx.activity.EdgeToEdge;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class deliveryInfo extends AppCompatActivity {
+    private Button buttnOffice;
+    private Button buttnDelivery;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_delivery_info);
+
+        buttnOffice=(Button) findViewById(R.id.btnOffice);
+        buttnDelivery=(Button) findViewById(R.id.btnDelivery);
+
+        buttnOffice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openOffice();
+            }
+        });
+        //btnDelivery
+        buttnDelivery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDelivery();
+            }
+        });
+    }
+    //btnOffice finction
+    public void openOffice(){
+        Intent intent1=new Intent(this, OrderCompleted.class);
+        startActivity(intent1);
+    }
+    //btnDelivery function
+    public void openDelivery(){
+        Intent intent2=new Intent(this, cumstomerDeliveryInfo.class);
+        startActivity(intent2);
+    }
+
+}
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/loginbkg"
+    tools:context=".deliveryInfo">
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        android:background="@drawable/custom_edittext">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="24dp">
+
+
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Almost Done!! PLEASE SELCET YOUR DELIVERY WAY "
+                android:textAlignment="center"
+                android:textColor="@color/purple"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+
+
+            <Button
+                android:id="@+id/btnOffice"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/purple"
+                android:onClick="activity_order_completed"
+                android:text="FROM OFFICE"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/btnDelivery"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/purple"
+                android:onClick="login_page"
+                android:text="DELIVERY"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="House Maids Application"
+        android:textAlignment="center"
+        android:textStyle="bold|italic" />
+
+
+</LinearLayout>
