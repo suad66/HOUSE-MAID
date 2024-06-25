@@ -1,0 +1,144 @@
+package com.example.house_maid_app;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MarissaInfo extends AppCompatActivity {
+    private Button btnMoreInf;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_marissa_info);
+        btnMoreInf=(Button) findViewById(R.id.btnMoreInf);
+        btnMoreInf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMoreInfPage();
+            }
+        });
+    }
+    public void openMoreInfPage(){
+        Intent intent10=new Intent(this, ServicesTypesPages.class);
+        startActivity(intent10);
+    }
+}
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MarissaInfo">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detailName"
+        android:layout_marginTop="14dp"
+        android:text="House Maid details"
+        android:textSize="24sp"
+        android:textColor="@color/lavender"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:id="@+id/cardImage"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp">
+
+        <ImageView
+            android:layout_width="380dp"
+            android:layout_height="200dp"
+            android:id="@+id/detailImage"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/marissa"
+            android:scaleType="centerCrop"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full Name:"
+        android:textColor="@color/lavender"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MARISSA PENTINIO MARCO"
+        android:layout_marginStart="10dp"
+        android:textSize="16sp"
+        android:id="@+id/detailName1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nationality:"
+        android:textColor="@color/lavender"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="African"
+        android:layout_marginStart="10dp"
+        android:textSize="16sp"
+        android:id="@+id/detailNationslity"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More:"
+        android:textColor="@color/lavender"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="She is 25 years old Ugandan Housemaid . She worked as a housemaid in Saudi Arabia for 2 years. She can take care of babies , and she is very good in cleaning and ironing , she is wiling to learn how to cook Arabic Food."
+        android:layout_marginStart="10dp"
+        android:textSize="16sp"
+        />
+
+    <Button
+        android:id="@+id/btnMoreInf"
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Request"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="House Maids Application"
+        android:textAlignment="center"
+        android:layout_marginTop="100dp"
+        android:textStyle="bold|italic" />
+</LinearLayout>
